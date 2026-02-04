@@ -203,6 +203,7 @@ body {
   box-shadow: 0 2px 8px var(--color-shadow);
   overflow: hidden;
   min-height: 500px;
+  max-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--space-2xl) * 2);
 }
 
 .dashboard__header {
@@ -275,6 +276,7 @@ body {
 
 .dashboard__messages {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: var(--space-xl);
   display: flex;
@@ -355,6 +357,7 @@ body {
 }
 
 .dashboard__input {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: var(--space-md);

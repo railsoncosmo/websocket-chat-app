@@ -13,7 +13,7 @@
 <body>
   <header class="header">
     <div class="header__brand">
-      <i class="fa-solid fa-comment-dots" style="color: #0b5ed7;"></i>
+      <i class="fa-solid fa-comment-dots fa-2xl" style="color: #0b5ed7;"></i>
       <h1 class="header__title">Webchat App </h1>
     </div>
     <div class="dashboard__room-container">
@@ -26,7 +26,7 @@
     <section class="dashboard" aria-labelledby="client-a-title">
       <header class="dashboard__header">
         <div class="dashboard__info">
-          <h2 id="client-a-title" class="dashboard__title">Client A Dashboard</h2>
+          <h2 id="client-a-title" class="dashboard__title">Railson Cosmo</h2>
           <div class="dashboard__status">
             <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
             <span id="status" class="status-badge status-badge--connected"></span>
@@ -40,42 +40,20 @@
 
       <div class="dashboard__messages">
         <article class="message message--incoming">
-          <div class="avatar avatar--message" aria-hidden="true"></div>
+          <i class="fa-solid fa-circle-user fa-2xl"></i>
           <div class="message__content">
-            <span class="message__sender">Client B</span>
+            <span class="message__sender">Isadora Maria</span>
             <div class="message__bubble message__bubble--incoming">
-              Hey Client A! Is the connection established?
-            </div>
-          </div>
-        </article>
-
-        <article class="message message--outgoing">
-          <div class="message__content">
-            <span class="message__sender">You (Client A)</span>
-            <div class="message__bubble message__bubble--outgoing">
-              Yes, everything looks green on my end. Testing the new payload structure.
-            </div>
-          </div>
-          <div class="avatar avatar--message" aria-hidden="true"></div>
-        </article>
-
-        <article class="message message--incoming">
-          <div class="avatar avatar--message" aria-hidden="true"></div>
-          <div class="message__content">
-            <span class="message__sender">Client B</span>
-            <div class="message__bubble message__bubble--incoming">
-              Great! Let's run through the test scenarios.
+              Olá
             </div>
           </div>
         </article>
       </div>
 
       <form class="dashboard__input" aria-label="Enviar mensagem como Client A">
-        <div class="avatar avatar--input" aria-hidden="true"></div>
+        <i class="fa-solid fa-circle-user fa-2xl"></i>
         <div class="input-wrapper">
           <input type="text" class="input" placeholder="Message as Client A..." aria-label="Mensagem">
-          <span class="icon icon--mic" aria-hidden="true"></span>
-          <span class="icon icon--emoji" aria-hidden="true"></span>
         </div>
         <button type="submit" class="btn btn--primary btn--send">Send</button>
       </form>
@@ -84,7 +62,7 @@
     <section class="dashboard" aria-labelledby="client-b-title">
       <header class="dashboard__header">
         <div class="dashboard__info">
-          <h2 id="client-b-title" class="dashboard__title">Client B Dashboard</h2>
+          <h2 id="client-b-title" class="dashboard__title">Isadora Maria</h2>
           <div class="dashboard__status">
             <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
             <span id="status-b" class="status-badge status-badge--connected"></span>
@@ -98,42 +76,20 @@
 
       <div class="dashboard__messages">
         <article class="message message--incoming">
-          <div class="avatar avatar--message" aria-hidden="true"></div>
+          <i class="fa-solid fa-circle-user fa-2xl"></i>
           <div class="message__content">
-            <span class="message__sender">Client A</span>
+            <span class="message__sender">Railson Cosmo</span>
             <div class="message__bubble message__bubble--incoming">
-              Hey Client B! Ready to test?
-            </div>
-          </div>
-        </article>
-
-        <article class="message message--outgoing">
-          <div class="message__content">
-            <span class="message__sender">You (Client B)</span>
-            <div class="message__bubble message__bubble--outgoing">
-              Yes, everything looks green on my end. Testing the new payload structure.
-            </div>
-          </div>
-          <div class="avatar avatar--message" aria-hidden="true"></div>
-        </article>
-
-        <article class="message message--incoming">
-          <div class="avatar avatar--message" aria-hidden="true"></div>
-          <div class="message__content">
-            <span class="message__sender">Client A</span>
-            <div class="message__bubble message__bubble--incoming">
-              Perfect! The latency looks good.
+              Olá
             </div>
           </div>
         </article>
       </div>
 
       <form class="dashboard__input" aria-label="Enviar mensagem como Client B">
-        <div class="avatar avatar--input" aria-hidden="true"></div>
+        <i class="fa-solid fa-circle-user fa-2xl"></i>
         <div class="input-wrapper">
           <input type="text" class="input" placeholder="Message as Client B..." aria-label="Mensagem">
-          <span class="icon icon--mic" aria-hidden="true"></span>
-          <span class="icon icon--emoji" aria-hidden="true"></span>
         </div>
         <button id="message" type="submit" class="btn btn--primary btn--send">Send</button>
       </form>
