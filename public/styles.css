@@ -184,12 +184,12 @@ body {
 .main {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;        /* 1 coluna para ocupar a largura inteira */
   gap: var(--space-2xl);
   margin-top: var(--header-height);
   margin-bottom: var(--footer-height);
-  padding: var(--space-2xl);
-  max-width: 1600px;
+  padding: var(--space-2xl);         /* mantém o espaçamento */
+  max-width: 100%;                   /* ou remover max-width para usar toda a largura */
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -198,6 +198,7 @@ body {
 .dashboard {
   display: flex;
   flex-direction: column;
+  width: 100%; 
   background-color: var(--color-bg-surface);
   border-radius: var(--radius-xl);
   box-shadow: 0 2px 8px var(--color-shadow);
@@ -244,12 +245,15 @@ body {
   cursor: pointer;
   padding: var(--space-sm);
   border-radius: var(--radius-md);
-  transition: color 0.2s, background-color 0.2s;
 }
 
-.dashboard__disconnect:hover {
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-input);
+.dashboard__connect {
+  background: var(--color-success);
+  border: none;
+  color: var(--color-bg-surface);
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
 }
 
 .status-indicator {
@@ -260,6 +264,10 @@ body {
 
 .status-indicator--connected {
   background-color: var(--color-success);
+}
+
+.status-indicator--disconnected {
+  background-color: var(--color-danger);
 }
 
 .status-badge {

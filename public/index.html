@@ -27,13 +27,13 @@
       <header class="dashboard__header">
         <div class="dashboard__info">
           <h2 id="client-a-title" class="dashboard__title">Railson Cosmo</h2>
-          <div class="dashboard__status">
+          <div id="status-container" class="dashboard__status">
             <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
             <span id="status" class="status-badge status-badge--connected"></span>
             <span class="dashboard__status-sep" aria-hidden="true"></span>
           </div>
         </div>
-        <button type="button" class="dashboard__disconnect" aria-label="Desconectar Client A">
+        <button id="disconnect" type="button" class="dashboard__disconnect" aria-label="Desconectar">
           <span class="icon icon--power" aria-hidden="true"></span>
         </button>
       </header>
@@ -55,48 +55,11 @@
         <div class="input-wrapper">
           <input type="text" class="input" placeholder="Message as Client A..." aria-label="Mensagem">
         </div>
-        <button type="submit" class="btn btn--primary btn--send">Send</button>
+        <button type="submit" class="btn btn--primary btn--send">Enviar</button>
       </form>
     </section>
 
-    <section class="dashboard" aria-labelledby="client-b-title">
-      <header class="dashboard__header">
-        <div class="dashboard__info">
-          <h2 id="client-b-title" class="dashboard__title">Isadora Maria</h2>
-          <div class="dashboard__status">
-            <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
-            <span id="status-b" class="status-badge status-badge--connected"></span>
-            <span class="dashboard__status-sep" aria-hidden="true"></span>
-          </div>
-        </div>
-        <button type="button" class="dashboard__disconnect" aria-label="Desconectar Client B">
-          <span class="icon icon--power" aria-hidden="true"></span>
-        </button>
-      </header>
-
-      <div class="dashboard__messages">
-        <article class="message message--incoming">
-          <i class="fa-solid fa-circle-user fa-2xl"></i>
-          <div class="message__content">
-            <span class="message__sender">Railson Cosmo</span>
-            <div class="message__bubble message__bubble--incoming">
-              Olá
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <form class="dashboard__input" aria-label="Enviar mensagem como Client B">
-        <i class="fa-solid fa-circle-user fa-2xl"></i>
-        <div class="input-wrapper">
-          <input type="text" class="input" placeholder="Message as Client B..." aria-label="Mensagem">
-        </div>
-        <button id="message" type="submit" class="btn btn--primary btn--send">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- <footer class="footer">
+    <!-- <footer class="footer">
     <div class="footer__left">
       <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
       <span class="footer__text">Server: RUNNING (8080)</span>
@@ -112,8 +75,8 @@
     </div>
   </footer> -->
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
