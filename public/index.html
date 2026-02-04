@@ -4,15 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dual Client WebSocket Simulator | Web Chat App</title>
+  <title>Webchat App</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <header class="header">
     <div class="header__brand">
-      <span class="header__logo" aria-hidden="true"></span>
-      <h1 class="header__title">WebSocket Webchat App</h1>
+      <i class="fa-solid fa-comment-dots" style="color: #0b5ed7;"></i>
+      <h1 class="header__title">Webchat App </h1>
+    </div>
+    <div class="dashboard__room-container">
+      <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+      <span id="roomA" class="dashboard__room"></span>
     </div>
   </header>
 
@@ -23,9 +29,9 @@
           <h2 id="client-a-title" class="dashboard__title">Client A Dashboard</h2>
           <div class="dashboard__status">
             <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
-            <span class="status-badge status-badge--connected">Connected</span>
+            <span id="status" class="status-badge status-badge--connected"></span>
+            <span class="dashboard__status-sep" aria-hidden="true"></span>
           </div>
-          <p class="dashboard__url">ws://localhost:8080/chat/client-a</p>
         </div>
         <button type="button" class="dashboard__disconnect" aria-label="Desconectar Client A">
           <span class="icon icon--power" aria-hidden="true"></span>
@@ -33,8 +39,6 @@
       </header>
 
       <div class="dashboard__messages">
-        <p class="message-divider">YESTERDAY, 10:45 AM</p>
-
         <article class="message message--incoming">
           <div class="avatar avatar--message" aria-hidden="true"></div>
           <div class="message__content">
@@ -51,15 +55,9 @@
             <div class="message__bubble message__bubble--outgoing">
               Yes, everything looks green on my end. Testing the new payload structure.
             </div>
-            <div class="message__meta">
-              <time class="message__time">10:47 AM</time>
-              <span class="icon icon--checkmark" aria-hidden="true"></span>
-            </div>
           </div>
           <div class="avatar avatar--message" aria-hidden="true"></div>
         </article>
-
-        <p class="message-system">System: WebSocket Handshake Successful</p>
 
         <article class="message message--incoming">
           <div class="avatar avatar--message" aria-hidden="true"></div>
@@ -89,9 +87,9 @@
           <h2 id="client-b-title" class="dashboard__title">Client B Dashboard</h2>
           <div class="dashboard__status">
             <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
-            <span class="status-badge status-badge--connected">Connected</span>
+            <span id="status-b" class="status-badge status-badge--connected"></span>
+            <span class="dashboard__status-sep" aria-hidden="true"></span>
           </div>
-          <p class="dashboard__url">ws://localhost:8080/chat/client-b</p>
         </div>
         <button type="button" class="dashboard__disconnect" aria-label="Desconectar Client B">
           <span class="icon icon--power" aria-hidden="true"></span>
@@ -99,8 +97,6 @@
       </header>
 
       <div class="dashboard__messages">
-        <p class="message-divider">YESTERDAY, 10:45 AM</p>
-
         <article class="message message--incoming">
           <div class="avatar avatar--message" aria-hidden="true"></div>
           <div class="message__content">
@@ -117,15 +113,9 @@
             <div class="message__bubble message__bubble--outgoing">
               Yes, everything looks green on my end. Testing the new payload structure.
             </div>
-            <div class="message__meta">
-              <time class="message__time">10:46 AM</time>
-              <span class="icon icon--checkmark" aria-hidden="true"></span>
-            </div>
           </div>
           <div class="avatar avatar--message" aria-hidden="true"></div>
         </article>
-
-        <p class="message-system">System: Client A is typing...</p>
 
         <article class="message message--incoming">
           <div class="avatar avatar--message" aria-hidden="true"></div>
@@ -145,12 +135,12 @@
           <span class="icon icon--mic" aria-hidden="true"></span>
           <span class="icon icon--emoji" aria-hidden="true"></span>
         </div>
-        <button type="submit" class="btn btn--primary btn--send">Send</button>
+        <button id="message" type="submit" class="btn btn--primary btn--send">Send</button>
       </form>
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- <footer class="footer">
     <div class="footer__left">
       <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
       <span class="footer__text">Server: RUNNING (8080)</span>
@@ -164,7 +154,10 @@
       <span class="icon icon--gear" aria-hidden="true"></span>
       <span class="footer__text">Debug Mode: ON</span>
     </div>
-  </footer>
+  </footer> -->
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
