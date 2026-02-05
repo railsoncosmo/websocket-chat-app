@@ -15,7 +15,11 @@ io.on("connection", (socket) => {
   socket.emit("welcome", { message: "Conectado", room: socket.id });
 
   socket.on("message", (data) => {
-    io.emit("message", { msg: data, timestamp: Date.now() });
+    io.emit("message", {
+      msg: data,
+      timestamp: Date.now(),
+      senderId: socket.id,
+    });
   });
 
   socket.on("disconnect", (data) => {

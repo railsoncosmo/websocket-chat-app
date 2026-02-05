@@ -38,24 +38,14 @@
         </button>
       </header>
 
-      <div class="dashboard__messages">
-        <article class="message message--incoming">
-          <i class="fa-solid fa-circle-user fa-2xl"></i>
-          <div class="message__content">
-            <span class="message__sender">Isadora Maria</span>
-            <div class="message__bubble message__bubble--incoming">
-              Olá
-            </div>
-          </div>
-        </article>
-      </div>
+      <div id="messages-list" class="dashboard__messages"></div>
 
-      <form class="dashboard__input" aria-label="Enviar mensagem como Client A">
+      <form class="dashboard__input">
         <i class="fa-solid fa-circle-user fa-2xl"></i>
         <div class="input-wrapper">
-          <input type="text" class="input" placeholder="Message as Client A..." aria-label="Mensagem">
+          <input id="message-input" type="text" class="input" placeholder="Enviar mensagem..." aria-label="Mensagem">
         </div>
-        <button type="submit" class="btn btn--primary btn--send">Enviar</button>
+        <button id="send-button" type="submit" class="btn btn--primary btn--send">Enviar</button>
       </form>
     </section>
 
