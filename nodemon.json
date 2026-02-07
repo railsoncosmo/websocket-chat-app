@@ -1,6 +1,8 @@
 {
   "watch": ["src"],
-  "ext": "js,json",
-  "ignore": ["node_modules"],
-  "legacyWatch": true
+  "ext": "js,json,ts",
+  "ignore": ["src/**/*.spec.ts", "node_modules"],
+  "exec": "node src/server.js",
+  "delay": "500",
+  "verbose": true
 }

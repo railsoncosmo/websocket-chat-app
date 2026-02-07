@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webchat App</title>
+  <title>Webchat App - Cadastro de salas</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,59 +14,55 @@
   <header class="header">
     <div class="header__brand">
       <i class="fa-solid fa-comment-dots fa-2xl" style="color: #0b5ed7;"></i>
-      <h1 class="header__title">Webchat App </h1>
-    </div>
-    <div class="dashboard__room-container">
-      <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-      <span id="roomA" class="dashboard__room"></span>
+      <h1 class="header__title">Webchat App</h1>
     </div>
   </header>
 
   <main class="main">
-    <section class="dashboard" aria-labelledby="client-a-title">
+    <section class="dashboard register-card" aria-labelledby="register-title">
       <header class="dashboard__header">
         <div class="dashboard__info">
-          <h2 id="client-a-title" class="dashboard__title">Railson Cosmo</h2>
-          <div id="status-container" class="dashboard__status">
-            <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
-            <span id="status" class="status-badge status-badge--connected"></span>
-            <span class="dashboard__status-sep" aria-hidden="true"></span>
-          </div>
+          <h2 id="register-title" class="dashboard__title">Cadastro de salas</h2>
+          <p class="register-card__subtitle">Crie uma nova sala ou entre em uma existente.</p>
         </div>
-        <button id="disconnect" type="button" class="dashboard__disconnect" aria-label="Desconectar">
-          <span class="icon icon--power" aria-hidden="true"></span>
-        </button>
       </header>
 
-      <div id="messages-list" class="dashboard__messages"></div>
+      <div class="register-card__body">
+        <form class="register-card__form" aria-label="Criar sala">
+          <div class="input-wrapper">
+            <i class="fa-solid fa-door-open register-card__input-icon" aria-hidden="true"></i>
+            <input id="room-name" type="text" class="input" placeholder="Nome da sala" aria-label="Nome da sala"
+              autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn--primary register-card__btn">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Criar sala
+          </button>
+        </form>
 
-      <form class="dashboard__input">
-        <i class="fa-solid fa-circle-user fa-2xl"></i>
-        <div class="input-wrapper">
-          <input id="message-input" type="text" class="input" placeholder="Enviar mensagem..." aria-label="Mensagem">
+        <div class="register-card__divider">
+          <span class="register-card__divider-text">ou</span>
         </div>
-        <button id="send-button" type="submit" class="btn btn--primary btn--send">Enviar</button>
-      </form>
+
+        <div class="register-card__section">
+          <h3 class="register-card__section-title">Salas disponíveis</h3>
+          <ul id="room-list" class="register-card__list" aria-label="Lista de salas">
+          </ul>
+
+          <div class="register-card__actions">
+            <button id="delete-all-rooms" type="button" class="btn btn--danger register-card__btn"
+              aria-label="Excluir todas as salas">
+              <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+              Excluir todas as salas
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- <footer class="footer">
-    <div class="footer__left">
-      <span class="status-indicator status-indicator--connected" aria-hidden="true"></span>
-      <span class="footer__text">Server: RUNNING (8080)</span>
-      <span class="icon icon--arrows" aria-hidden="true"></span>
-      <span class="footer__text">Latency: 14ms</span>
-    </div>
-
-    <div class="footer__right">
-      <span class="icon icon--folder" aria-hidden="true"></span>
-      <span class="footer__text">Open CLI Console</span>
-      <span class="icon icon--gear" aria-hidden="true"></span>
-      <span class="footer__text">Debug Mode: ON</span>
-    </div>
-  </footer> -->
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="app.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
